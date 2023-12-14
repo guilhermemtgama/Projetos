@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+</head>
+<body>
+    <h2>Cadastramentos</h2>
+
+         {% for funcionario in funcionarios %}
+            <li> {{ funcionario.Nome }} - {{ funcionario.Idade }} - {{ funcionario.Telefone }}</li>
+        {% endfor %}
+    <b></b>
+</body>
+</html>
