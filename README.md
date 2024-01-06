@@ -19,7 +19,5 @@ You can click the Preview link to take a look at your changes.
 <div align="center"> 
    
   <a href="https://www.linkedin.com/in/guilherme-martins-a4040b199/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
-
-  ![Snake animation](https://github.com/rafaballerini/rafaballerini/blob/output/github-contribution-grid-snake.svg)
   
 </div>
