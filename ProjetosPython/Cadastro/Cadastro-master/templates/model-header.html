@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+    <style>
+        .welcome-bar {
+            background: linear-gradient(to right, #87CEEB, #57c986);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logout-button {
+            margin-left: 20px; /* Ajuste a margem esquerda conforme necessário */
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-bar">
+        <h1>Bem-vindo, {{ usuario|title }}</h1>
+        <a href="/logout" class="logout-button">Logout</a>
+    </div>
+    <!-- Conteúdo da página continua abaixo da faixa de cabeçalho -->
+</body>
+</html>
