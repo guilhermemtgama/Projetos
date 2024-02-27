@@ -40,7 +40,8 @@
             border: 1px solid #cccccc;
             border-radius: 4px;
             box-sizing: border-box;
-        }
+    }
+
         button {
             width: 100%;
             padding: 12px;
@@ -66,17 +67,19 @@
         <h1>Login</h1>
         <form action="submit" method="POST" style="text-align: center;">
             {% csrf_token %}
-            <label for="username">Usuário:</label>
-            <input type="text" id="username" name="username">
-            <label for="password">Senha:</label>
-            <input type="password" id="password" name="password">
+            <label for="username" style="color: #007bff;">Usuário:</label>
+            <input type="text" id="username" name="username" style="border-color: #007bff;">
+            <label for="password" style="color: #007bff;">Senha:</label>
+            <input type="password" id="password" name="password" style="border-color: #007bff;">
             <br>
             <br>
-            <button type="submit">Entrar</button>
+            <button type="submit" class="submit-button">Entrar</button>
         </form>
         {% for message in messages %}
         <div class="error-message">{{ message }}</div>
         {% endfor %}
     </div>
+    
 </body>
+
 </html>

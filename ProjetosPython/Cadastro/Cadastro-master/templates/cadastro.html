@@ -68,15 +68,122 @@
 <div class="content-container"> <!-- Nova div para envolver o conteúdo -->
     <div class="w3-container">    
         <h2>Cadastros</h2>
+        <input type="text" id="searchInput" onkeyup="search()" placeholder="Pesquisar...">            
+        <select id="filterSelect" onchange="applyFilter()">
+            <option value="" disabled selected>Filtro...</option>
+            <option value="alphabetical_asc">Ordenar A-Z</option>
+            <option value="alphabetical_desc">Ordenar Z-A</option>       
+                   
+        </select>        
     </div>
+    <script>
+        function sortAlphabetically(order) {
+            var ul, li, i, switching, shouldSwitch;
+            ul = document.getElementById("cadastrosList");
+            switching = true;
+    
+            while (switching) {
+                switching = false;
+                li = ul.getElementsByTagName("li");
+                for (i = 0; i < (li.length - 1); i++) {
+                    shouldSwitch = false;
+                    var current = li[i].getElementsByTagName("span")[0].innerText.toUpperCase();
+                    var next = li[i + 1].getElementsByTagName("span")[0].innerText.toUpperCase();
+                    if ((order === 'asc' && current > next) || (order === 'desc' && current < next)) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+                if (shouldSwitch) {
+                    li[i].parentNode.insertBefore(li[i + 1], li[i]);
+                    switching = true;
+                }
+            }
+        }   
+            
+        function sortByAge(order) {
+            var ul, li, i, switching, shouldSwitch;
+            ul = document.getElementById("cadastrosList");
+            switching = true;
+    
+            while (switching) {
+                switching = false;
+                li = ul.getElementsByTagName("li");
+                for (i = 0; i < (li.length - 1); i++) {
+                    shouldSwitch = false;
+                    var currentAge = parseInt(li[i].getElementsByTagName("span")[2].innerText);
+                    var nextAge = parseInt(li[i + 1].getElementsByTagName("span")[2].innerText);
+                    if ((order === 'asc' && currentAge > nextAge) || (order === 'desc' && currentAge < nextAge)) {
+                        shouldSwitch = true;
+                        break;
+                    }
+                }
+                if (shouldSwitch) {
+                    li[i].parentNode.insertBefore(li[i + 1], li[i]);
+                    switching = true;
+                }
+            }
+        }
+    
+        function applyFilter() {
+            var select = document.getElementById("filterSelect");
+            var selectedOption = select.options[select.selectedIndex].value;
 
-    <ul style="font-size: 18px">
+            console.log("Selected option:", selectedOption); // Adiciona este console.log para depuração
+
+            if (selectedOption === "alphabetical_asc" || selectedOption === "alphabetical_desc") {
+                var order = selectedOption === "alphabetical_asc" ? "asc" : "desc";
+                sortAlphabetically(order);
+            } else if (selectedOption === "date_asc" || selectedOption === "date_desc") {
+                var order = selectedOption === "date_asc" ? "asc" : "desc";
+                sortByDate(order);
+            } else if (selectedOption === "age_asc" || selectedOption === "age_desc") {
+                var order = selectedOption === "age_asc" ? "asc" : "desc";
+                sortByAge(order);
+            }
+        }
+
+
+    
+        function search() {
+            var input, filter, ul, li, nome, idade, telefone, i;
+            input = document.getElementById('searchInput');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("cadastrosList");
+            li = ul.getElementsByTagName('li');
+    
+            for (i = 0; i < li.length; i++) {
+                nome = li[i].getElementsByTagName("span")[0];
+                idade = li[i].getElementsByTagName("span")[1];
+                telefone = li[i].getElementsByTagName("span")[2];
+                var ageText = idade.innerText.toUpperCase(); // Get age text
+                var ageValue = parseInt(ageText); // Parse age text to integer
+                if (nome.innerHTML.toUpperCase().indexOf(filter) > -1 || 
+                    idade.innerHTML.toUpperCase().indexOf(filter) > -1 || 
+                    telefone.innerHTML.toUpperCase().indexOf(filter) > -1 ||
+                    ageValue.toString().indexOf(filter) > -1) { // Check for age match
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+    
+      
+    <ul id="cadastrosList" style="font-size: 18px">
         <a href="funcionario/">
-            <button type="button">Novo Funcionário</button>
-        </a>
-
+            <button type="button">Novo Usuário</button>          
+        </a>  
+             
+        
         {% for cadastro in cadastros %}
         <li>
+            
+            <span style="display: none;" name="Nome">{{ cadastro.Nome }}</span>
+            <span style="display: none;" name="Idade">{{ cadastro.Idade }}</span>
+            <span style="display: none;" name="Telefone">{{ cadastro.Telefone }}</span>
+        
             Nome: {{ cadastro.Nome }}<br>
             Idade: {{ cadastro.Idade }} <br>
             Telefone:  {{ cadastro.Telefone }}
