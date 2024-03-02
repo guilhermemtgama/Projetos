@@ -4,7 +4,7 @@
  Olá, me chamo Guilherme Martins Gama.
   
  Comecei na área de desenvolvimento e programação a alguns anos via cursos da Udemy, Curso em Video pretendo me especializar na área o mais rapido possivel!
-  Atualmente estou familiarizado com Python, C#, JS, PHP, Plataforma Uipath, Vb .Net. Pretendo continuar os estudos seguindo aprimorando meus conhecimentos.
+  Atualmente estou familiarizado com Python, C#, Html5, Css3, JS, PHP, Plataforma Uipath, Vb .Net. Pretendo continuar os estudos seguindo aprimorando meus conhecimentos.
 <!---
 guilhermemtgama/guilhermemtgama is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
