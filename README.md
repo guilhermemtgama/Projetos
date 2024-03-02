@@ -12,7 +12,7 @@ You can click the Preview link to take a look at your changes.
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=python,html5,css3,js,nodejs,vscode,git,c#,uipath", />
+    <img src="https://skillicons.dev/icons?i=python,html,css,js,nodejs,vscode,git,c#,uipath", />
   </a>
 </p>
   
