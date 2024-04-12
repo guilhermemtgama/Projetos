@@ -1,5 +1,8 @@
 @charset "UTF-8";
-
+@font-face {
+    font-family: 'FonteLogo';
+    src: url("../_fonts/MadimiOne-Regular.ttf");
+}
 body{      
     background-color:#dddddd;
     color: rgba(0, 0, 0, 1);
@@ -20,7 +23,7 @@ p{
 
 header#cabecalho img#icone {
     position: absolute;
-    left: 1232px;
+    left: 950px;
     top: 68px;    
 }
 
@@ -30,7 +33,7 @@ header#cabecalho {
     background: url("../_imagens/glass-logo-peq.jpg") no-repeat 0px 80px;
 }
 header#cabecalho h1{
-    font-family: Arial, sans-serif;
+    font-family: 'fonteLogo', sans-serif;
     font-size: 30pt;
     color: #606060;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.65);
@@ -39,7 +42,7 @@ header#cabecalho h1{
 }
 
 header#cabecalho h2{
-    font-family: Arial, sans-serif;
+font-family: 'fonteLogo', sans-serif;
     font-size: 15pt;
     color: #888888;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.65);
@@ -85,7 +88,7 @@ nav#menu ul {
     text-transform: uppercase;
     position: absolute;
     top: -20px;
-    left: 750px;
+    left: 500px;
 }
 
 nav#menu li {
@@ -111,6 +114,60 @@ nav#menu a{
 }
 
 nav#menu a:hover{
+    color: white;
+    text-decoration: underline;
+}
+
+section#corpo{
+    display: block;
+    width: 520px;
+    float: left;
+    border-right: 1px solid #606060;
+    padding-right: 15px;
+}
+
+table#tabelaspec {
+    border: 1px solid #606060;
+    border-spacing: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table#tabelaspec td {
+    border: 1px solid #606060;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+aside#lateral{
+    display: block;
+    width: 350px;
+    float: right;
+}
+footer#rodape{
+    clear: both;
+    border-top: 1px solid #606060;
+}
+
+footer#rodape p {
+    text-align: center;
+}
+footer#rodape p :hover {
+    background-color: #606060;
+}
+
+footer#rodape p{
+    color: black;
+    text-decoration: none;
+}
+
+footer#rodape a{
+    color: black;
+    text-decoration: none;
+}
+
+footer#rodape a:hover{
     color: white;
     text-decoration: underline;
 }
