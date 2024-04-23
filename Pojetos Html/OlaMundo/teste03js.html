@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Título da página</title>
+    <meta charset="utf-8">
+    <script>
+        var quebrada = false; // Move a declaração da variável para fora da função
+
+        function mudaLampada(tipo){
+
+            if (tipo == 1){
+                arquivo = "../curso-glass-html5/projeto-glass-html5/_imagens/lampada-acesa.jpg";
+            }
+            if (tipo == 2){
+                arquivo = "../curso-glass-html5/projeto-glass-html5/_imagens/lampada-apagada.jpg";
+            }
+            if (tipo == 3){
+                arquivo = "../curso-glass-html5/projeto-glass-html5/_imagens/lampada-quebrada.jpg";
+                
+            }
+
+            if (quebrada == false){
+                document.getElementById("luz").src = arquivo;
+                if (tipo == 3){
+                    quebrada = true;
+                    console.log(quebrada);
+                }
+            }
+        }
+        
+    </script>
+  </head>
+  <body>
+    <h1>Acenda a Lâmpada</h1>
+    <img src="../curso-glass-html5/projeto-glass-html5/_imagens/lampada-apagada.jpg" id="luz" onmousemove="mudaLampada(1)" onmouseout="mudaLampada(2)" onclick="mudaLampada(3)"/>
+  </body>
+</html>
